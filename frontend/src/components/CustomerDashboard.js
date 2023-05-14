@@ -142,212 +142,6 @@
 //
 // export default CustomerDashboard;
 
-// import {
-//     AppBar,
-//     Button,
-//     IconButton,
-//     Paper,
-//     Table,
-//     TableBody,
-//     TableCell,
-//     TableContainer,
-//     TableHead,
-//     TableRow,
-//     Toolbar,
-//     Drawer,
-//     List,
-//     ListItem,
-//     ListItemText,
-// } from "@mui/material";
-// import { Link, useLocation } from "react-router-dom";
-// import { React, useEffect, useState } from "react";
-// import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-// import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-// import "../css/CustomerDashboard.css";
-// import CloseIcon from "@mui/icons-material/Close";
-// import axios from "axios";
-// import { useNavigate } from "react-router-dom";
-//
-// function CustomerDashboard() {
-//     const [products, setProducts] = useState([]);
-//     const [cart, setCart] = useState([]);
-//
-//     const addToCart = (product) => {
-//         const existingProduct = cart.find((item) => item.id === product.id);
-//         if (existingProduct) {
-//             const newCart = cart.map((item) =>
-//                 item.id === product.id
-//                     ? { ...item, quantity: item.quantity + 1 }
-//                     : item
-//             );
-//             setCart(newCart);
-//         } else {
-//             setCart([...cart, { ...product, quantity: 1 }]);
-//         }
-//     };
-//
-//     const removeFromCart = (product) => {
-//         const existingProduct = cart.find((item) => item.id === product.id);
-//         if (existingProduct.quantity === 1) {
-//             const newCart = cart.filter((item) => item.id !== product.id);
-//             setCart(newCart);
-//         } else {
-//             const newCart = cart.map((item) =>
-//                 item.id === product.id
-//                     ? { ...item, quantity: item.quantity - 1 }
-//                     : item
-//             );
-//             setCart(newCart);
-//         }
-//     };
-//
-//     const [drawerOpen, setDrawerOpen] = useState(false);
-//
-//     const handleDrawerOpen = () => {
-//         setDrawerOpen(true);
-//     };
-//
-//     const handleDrawerClose = () => {
-//         setDrawerOpen(false);
-//     };
-//     const fetchProducts = async () => {
-//         try {
-//             const response = await axios.get(
-//                 "http://localhost:1111/api/product/getProducts"
-//             );
-//             console.log(response.data);
-//             setProducts(response.data);
-//         } catch (error) {
-//             console.log(error);
-//         }
-//     };
-//
-//     const handleCartSummaryClick = () => {
-//         console.log("Cart Summary Clicked");
-//         console.log(cart);
-//         navigate("/cartsummary", { state: cart });
-//     };
-//
-//     const navigate = useNavigate();
-//     useEffect(() => {
-//         fetchProducts();
-//     }, []);
-//
-//     return (
-//         <>
-//             <AppBar>
-//                 <Toolbar>
-//                     <div style={{ flexGrow: 1 }} />
-//                     <IconButton
-//                         onClick={handleDrawerOpen}
-//                         style={{ color: "#fff" }}
-//                         color="inherit"
-//                     >
-//                         <ShoppingCartIcon />
-//                     </IconButton>
-//                     <Drawer
-//                         anchor="right"
-//                         open={drawerOpen}
-//                         onClose={handleDrawerClose}
-//                     >
-//                         <div className="shoppingCartHeader">
-//                             <h2>Shopping Cart</h2>
-//                             <IconButton onClick={handleDrawerClose}>
-//                                 <CloseIcon />
-//                             </IconButton>
-//                             <div className="shoppingCartItems">
-//                                 {cart.length > 0 ? (
-//                                     <>
-//                                         {cart.map((item) => (
-//                                             <div key={item.id} className="shoppingCartItem">
-//                                                 <div className="shoppingCartItemImg">
-//                                                     <img src={item.image} alt={item.name} />
-//                                                 </div>
-//                                                 <div className="shoppingCartItemDetails">
-//                                                     <h4>{item.name}</h4>
-//                                                     <p>
-//                                                         Price: ${item.price} Quantity: {item.quantity}
-//                                                     </p>
-//                                                 </div>
-//                                                 <div className="shoppingCartItemButtons">
-//                                                     <Button
-//                                                         variant="contained"
-//                                                         color="primary"
-//                                                         onClick={() => addToCart(item)}
-//                                                     >
-//                                                         +
-//                                                     </Button>
-//                                                     <Button
-//                                                         variant="contained"
-//                                                         color="secondary"
-//                                                         onClick={() => removeFromCart(item)}
-//                                                     >
-//                                                         -
-//                                                     </Button>
-//                                                 </div>
-//                                             </div>
-//                                         ))}
-//                                         <div className="shoppingCartFooter">
-//                                             <Button
-//                                                 variant="contained"
-//                                                 color="primary"
-//                                                 onClick={handleCartSummaryClick}
-//                                             >
-//                                                 Order Summary
-//                                             </Button>
-//                                         </div>
-//                                     </>
-//                                 ) : (
-//                                     <p>Your cart is empty</p>
-//                                 )}
-//                             </div>
-//                         </div>
-//                     </Drawer>
-//                      					<Button color="inherit" component={Link} to="/">
-//                      						Logout
-//                      					</Button>
-//                      				</Toolbar>
-//                  			</AppBar>
-//              			<div style =  {{ maxWidth: '150%', margin: '0 auto ',height: "590px", overflowY: "scroll" ,paddingTop: '60px', paddingBottom: '5px' }}>
-//              				<TableContainer component={Paper} variant="outlined" style={{ width: '99%', margin: '0 auto' }}>
-//              					<Table aria-label="products table" style={{ tableLayout: 'fixed' }}>
-//              						<TableHead>
-//              							<TableRow>
-//              								<TableCell style={{ width: '25%' , fontWeight:'bold' , fontSize: '18px'}}>Name</TableCell>
-//              								<TableCell style={{ width: '40%' , fontWeight:'bold', fontSize: '18px'}}>Description</TableCell>
-//              								<TableCell style={{ width: '15%' , fontWeight:'bold', fontSize: '18px'}}>Category</TableCell>
-//              								<TableCell style={{ width: '15%' , fontWeight:'bold', fontSize: '18px'}}>Quantity</TableCell>
-//              								<TableCell style={{ width: '10%' , fontWeight:'bold', fontSize: '18px'}}>Price</TableCell>
-//              								<TableCell style={{ width: '10%' , fontWeight:'bold', fontSize: '18px'}} align="right">Actions</TableCell>
-//              							</TableRow>
-//              						</TableHead>
-//              						<TableBody>
-//              						{products.map((product) => (
-// 								<TableRow key={product.id}>
-// 									<TableCell>{product.name}</TableCell>
-// 									<TableCell>{product.description}</TableCell>
-// 									<TableCell>{product.productCategory}</TableCell>
-// 									<TableCell>{product.quantity}</TableCell>
-// 									<TableCell>{product.price}</TableCell>
-// 									<TableCell align="right">
-// 										<IconButton color="primary" aria-label="add to shopping cart" onClick={() => addToCart(product)}>
-// 											<AddShoppingCartIcon />
-// 										</IconButton>
-// 									</TableCell>
-// 								</TableRow>
-// 							))}
-// 						</TableBody>
-// 					</Table>
-// 				</TableContainer>
-//
-// 			</div>
-// 		</>
-// 	);
-// }
-//
-// export default CustomerDashboard;
-
-
 import {
     AppBar,
     Button,
@@ -369,9 +163,6 @@ import { Link, useLocation } from "react-router-dom";
 import { React, useEffect, useState } from "react";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
-
 import "../css/CustomerDashboard.css";
 import CloseIcon from "@mui/icons-material/Close";
 import axios from "axios";
@@ -381,36 +172,19 @@ function CustomerDashboard() {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
 
-
-    // const addToCart = (product) => {
-    //     const existingProduct = cart.find((item) => item.id === product.id);
-    //     if (existingProduct) {
-    //         const newCart = cart.map((item) =>
-    //                 item.id === product.id
-    //                 ? { ...item, quantity: item.quantity + 1 }
-    //                 : item
-    //         );
-    //         setCart(newCart);
-    //     } else {
-    //         setCart([...cart, { ...product, quantity: 1 }]);
-    //     }
-    // };
     const addToCart = (product) => {
         const existingProduct = cart.find((item) => item.id === product.id);
         if (existingProduct) {
             const newCart = cart.map((item) =>
-                item.id === product.id && item.quantity < product.quantity
+                item.id === product.id
                     ? { ...item, quantity: item.quantity + 1 }
                     : item
             );
             setCart(newCart);
         } else {
-            if (product.quantity >= 1) {
-                setCart([...cart, { ...product, quantity: 1 }]);
-            }
+            setCart([...cart, { ...product, quantity: 1 }]);
         }
     };
-
 
     const removeFromCart = (product) => {
         const existingProduct = cart.find((item) => item.id === product.id);
@@ -448,16 +222,10 @@ function CustomerDashboard() {
         }
     };
 
-    // const handleCartSummaryClick = () => {
-    //     console.log("Cart Summary Clicked");
-    //     console.log(cart);
-    //
-    //     navigate("/cartsummary", { state: cart });
-    // };
     const handleCartSummaryClick = () => {
-        const cartWithQuantities = cart.map(item => ({...item, quantity: item.quantity}));
+        console.log("Cart Summary Clicked");
         console.log(cart);
-        navigate("/cartsummary", { state: cartWithQuantities });
+        navigate("/cartsummary", { state: cart });
     };
 
     const navigate = useNavigate();
@@ -492,7 +260,9 @@ function CustomerDashboard() {
                                     <>
                                         {cart.map((item) => (
                                             <div key={item.id} className="shoppingCartItem">
-
+                                                <div className="shoppingCartItemImg">
+                                                    <img src={item.image} alt={item.name} />
+                                                </div>
                                                 <div className="shoppingCartItemDetails">
                                                     <h4>{item.name}</h4>
                                                     <p>
@@ -559,30 +329,12 @@ function CustomerDashboard() {
 									<TableCell>{product.productCategory}</TableCell>
 									<TableCell>{product.quantity}</TableCell>
 									<TableCell>{product.price}</TableCell>
-									{/*<TableCell align="right">*/}
-									{/*	<IconButton color="primary" aria-label="add to shopping cart" onClick={() => addToCart(product)}>*/}
-									{/*		<AddShoppingCartIcon />*/}
-									{/*	</IconButton>*/}
-									{/*</TableCell>*/}
-                                    <TableCell align="right">
-                                        {cart.some(item => item.id === product.id) ?
-                                            <>
-                                                <IconButton onClick={() => removeFromCart(product)}>
-                                                    <RemoveIcon />
-                                                </IconButton>
-                                                <span>{cart.find(item => item.id === product.id).quantity}</span>
-                                                <IconButton onClick={() => addToCart(product)}>
-                                                    <AddIcon />
-                                                </IconButton>
-                                            </>
-                                            :
-                                            <IconButton onClick={() => addToCart(product)}>
-                                                <AddShoppingCartIcon />
-                                            </IconButton>
-                                        }
-                                    </TableCell>
-
-                                </TableRow>
+									<TableCell align="right">
+										<IconButton color="primary" aria-label="add to shopping cart" onClick={() => addToCart(product)}>
+											<AddShoppingCartIcon />
+										</IconButton>
+									</TableCell>
+								</TableRow>
 							))}
 						</TableBody>
 					</Table>
@@ -594,3 +346,251 @@ function CustomerDashboard() {
 }
 
 export default CustomerDashboard;
+
+//
+// import {
+//     AppBar,
+//     Button,
+//     IconButton,
+//     Paper,
+//     Table,
+//     TableBody,
+//     TableCell,
+//     TableContainer,
+//     TableHead,
+//     TableRow,
+//     Toolbar,
+//     Drawer,
+//     List,
+//     ListItem,
+//     ListItemText,
+// } from "@mui/material";
+// import { Link, useLocation } from "react-router-dom";
+// import { React, useEffect, useState } from "react";
+// import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+// import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+// import AddIcon from '@mui/icons-material/Add';
+// import RemoveIcon from '@mui/icons-material/Remove';
+//
+// import "../css/CustomerDashboard.css";
+// import CloseIcon from "@mui/icons-material/Close";
+// import axios from "axios";
+// import { useNavigate } from "react-router-dom";
+//
+// function CustomerDashboard() {
+//     const [products, setProducts] = useState([]);
+//     const [cart, setCart] = useState([]);
+//
+//
+//     // const addToCart = (product) => {
+//     //     const existingProduct = cart.find((item) => item.id === product.id);
+//     //     if (existingProduct) {
+//     //         const newCart = cart.map((item) =>
+//     //                 item.id === product.id
+//     //                 ? { ...item, quantity: item.quantity + 1 }
+//     //                 : item
+//     //         );
+//     //         setCart(newCart);
+//     //     } else {
+//     //         setCart([...cart, { ...product, quantity: 1 }]);
+//     //     }
+//     // };
+//     const addToCart = (product) => {
+//         const existingProduct = cart.find((item) => item.id === product.id);
+//         if (existingProduct) {
+//             const newCart = cart.map((item) =>
+//                 item.id === product.id && item.quantity < product.quantity
+//                     ? { ...item, quantity: item.quantity + 1 }
+//                     : item
+//             );
+//             setCart(newCart);
+//         } else {
+//             if (product.quantity >= 1) {
+//                 setCart([...cart, { ...product, quantity: 1 }]);
+//             }
+//         }
+//     };
+//
+//
+//     const removeFromCart = (product) => {
+//         const existingProduct = cart.find((item) => item.id === product.id);
+//         if (existingProduct.quantity === 1) {
+//             const newCart = cart.filter((item) => item.id !== product.id);
+//             setCart(newCart);
+//         } else {
+//             const newCart = cart.map((item) =>
+//                 item.id === product.id
+//                     ? { ...item, quantity: item.quantity - 1 }
+//                     : item
+//             );
+//             setCart(newCart);
+//         }
+//     };
+//
+//     const [drawerOpen, setDrawerOpen] = useState(false);
+//
+//     const handleDrawerOpen = () => {
+//         setDrawerOpen(true);
+//     };
+//
+//     const handleDrawerClose = () => {
+//         setDrawerOpen(false);
+//     };
+//     const fetchProducts = async () => {
+//         try {
+//             const response = await axios.get(
+//                 "http://localhost:1111/api/product/getProducts"
+//             );
+//             console.log(response.data);
+//             setProducts(response.data);
+//         } catch (error) {
+//             console.log(error);
+//         }
+//     };
+//
+//     // const handleCartSummaryClick = () => {
+//     //     console.log("Cart Summary Clicked");
+//     //     console.log(cart);
+//     //
+//     //     navigate("/cartsummary", { state: cart });
+//     // };
+//     const handleCartSummaryClick = () => {
+//         const cartWithQuantities = cart.map(item => ({...item, quantity: item.quantity}));
+//         console.log(cart);
+//         navigate("/cartsummary", { state: cartWithQuantities });
+//     };
+//
+//     const navigate = useNavigate();
+//     useEffect(() => {
+//         fetchProducts();
+//     }, []);
+//
+//     return (
+//         <>
+//             <AppBar>
+//                 <Toolbar>
+//                     <div style={{ flexGrow: 1 }} />
+//                     <IconButton
+//                         onClick={handleDrawerOpen}
+//                         style={{ color: "#fff" }}
+//                         color="inherit"
+//                     >
+//                         <ShoppingCartIcon />
+//                     </IconButton>
+//                     <Drawer
+//                         anchor="right"
+//                         open={drawerOpen}
+//                         onClose={handleDrawerClose}
+//                     >
+//                         <div className="shoppingCartHeader">
+//                             <h2>Shopping Cart</h2>
+//                             <IconButton onClick={handleDrawerClose}>
+//                                 <CloseIcon />
+//                             </IconButton>
+//                             <div className="shoppingCartItems">
+//                                 {cart.length > 0 ? (
+//                                     <>
+//                                         {cart.map((item) => (
+//                                             <div key={item.id} className="shoppingCartItem">
+//
+//                                                 <div className="shoppingCartItemDetails">
+//                                                     <h4>{item.name}</h4>
+//                                                     <p>
+//                                                         Price: ${item.price} Quantity: {item.quantity}
+//                                                     </p>
+//                                                 </div>
+//                                                 <div className="shoppingCartItemButtons">
+//                                                     <Button
+//                                                         variant="contained"
+//                                                         color="primary"
+//                                                         onClick={() => addToCart(item)}
+//                                                     >
+//                                                         +
+//                                                     </Button>
+//                                                     <Button
+//                                                         variant="contained"
+//                                                         color="secondary"
+//                                                         onClick={() => removeFromCart(item)}
+//                                                     >
+//                                                         -
+//                                                     </Button>
+//                                                 </div>
+//                                             </div>
+//                                         ))}
+//                                         <div className="shoppingCartFooter">
+//                                             <Button
+//                                                 variant="contained"
+//                                                 color="primary"
+//                                                 onClick={handleCartSummaryClick}
+//                                             >
+//                                                 Order Summary
+//                                             </Button>
+//                                         </div>
+//                                     </>
+//                                 ) : (
+//                                     <p>Your cart is empty</p>
+//                                 )}
+//                             </div>
+//                         </div>
+//                     </Drawer>
+//                      					<Button color="inherit" component={Link} to="/">
+//                      						Logout
+//                      					</Button>
+//                      				</Toolbar>
+//                  			</AppBar>
+//              			<div style =  {{ maxWidth: '150%', margin: '0 auto ',height: "590px", overflowY: "scroll" ,paddingTop: '60px', paddingBottom: '5px' }}>
+//              				<TableContainer component={Paper} variant="outlined" style={{ width: '99%', margin: '0 auto' }}>
+//              					<Table aria-label="products table" style={{ tableLayout: 'fixed' }}>
+//              						<TableHead>
+//              							<TableRow>
+//              								<TableCell style={{ width: '25%' , fontWeight:'bold' , fontSize: '18px'}}>Name</TableCell>
+//              								<TableCell style={{ width: '40%' , fontWeight:'bold', fontSize: '18px'}}>Description</TableCell>
+//              								<TableCell style={{ width: '15%' , fontWeight:'bold', fontSize: '18px'}}>Category</TableCell>
+//              								<TableCell style={{ width: '15%' , fontWeight:'bold', fontSize: '18px'}}>Quantity</TableCell>
+//              								<TableCell style={{ width: '10%' , fontWeight:'bold', fontSize: '18px'}}>Price</TableCell>
+//              								<TableCell style={{ width: '10%' , fontWeight:'bold', fontSize: '18px'}} align="right">Actions</TableCell>
+//              							</TableRow>
+//              						</TableHead>
+//              						<TableBody>
+//              						{products.map((product) => (
+// 								<TableRow key={product.id}>
+// 									<TableCell>{product.name}</TableCell>
+// 									<TableCell>{product.description}</TableCell>
+// 									<TableCell>{product.productCategory}</TableCell>
+// 									<TableCell>{product.quantity}</TableCell>
+// 									<TableCell>{product.price}</TableCell>
+// 									{/*<TableCell align="right">*/}
+// 									{/*	<IconButton color="primary" aria-label="add to shopping cart" onClick={() => addToCart(product)}>*/}
+// 									{/*		<AddShoppingCartIcon />*/}
+// 									{/*	</IconButton>*/}
+// 									{/*</TableCell>*/}
+//                                     <TableCell align="right">
+//                                         {cart.some(item => item.id === product.id) ?
+//                                             <>
+//                                                 <IconButton onClick={() => removeFromCart(product)}>
+//                                                     <RemoveIcon />
+//                                                 </IconButton>
+//                                                 <span>{cart.find(item => item.id === product.id).quantity}</span>
+//                                                 <IconButton onClick={() => addToCart(product)}>
+//                                                     <AddIcon />
+//                                                 </IconButton>
+//                                             </>
+//                                             :
+//                                             <IconButton onClick={() => addToCart(product)}>
+//                                                 <AddShoppingCartIcon />
+//                                             </IconButton>
+//                                         }
+//                                     </TableCell>
+//
+//                                 </TableRow>
+// 							))}
+// 						</TableBody>
+// 					</Table>
+// 				</TableContainer>
+//
+// 			</div>
+// 		</>
+// 	);
+// }
+//
+// export default CustomerDashboard;
