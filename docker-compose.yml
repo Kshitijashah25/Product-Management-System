@@ -13,8 +13,7 @@ services:
     networks:
       - appNetwork
   backend:
-#    image: kshitijashah/productmanagementsystem:latest
-    image: budcoded/productmanagementsystem:latest
+    image: kshitijashah/productmanagementsystem:latest
     ports:
       - "1111:1111"
     environment:
@@ -29,8 +28,7 @@ services:
     volumes:
       - logsVolume:/logs
   frontend:
-#    image: kshitijashah/productmanagementsystemui:latest
-    image: budcoded/productmanagementsystemui:latest
+    image: kshitijashah/productmanagementsystemui:latest
     networks:
       - appNetwork
     ports:
