@@ -44,7 +44,7 @@ function CartSummary() {
                 <TableHead>
                     <TableRow>
                         <TableCell>Item</TableCell>
-                        <TableCell>Price</TableCell
+                        <TableCell>Price</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
