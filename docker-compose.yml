@@ -13,15 +13,14 @@ services:
     networks:
       - appNetwork
   backend:
-    image: kshitijashah/productmanagementsystem:latest
+#    image: kshitijashah/productmanagementsystem:latest
+    image: budcoded/productmanagementsystem:latest
     ports:
       - "1111:1111"
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/product_management_system
       SPRING_DATASOURCE_USERNAME: app_user
       SPRING_DATASOURCE_PASSWORD: app_password
-      SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.MySQL5Dialect
-      SPRING_JPA_HIBERNATE_DDL_AUTO: update
     depends_on:
       db:
         condition: service_healthy
@@ -30,7 +29,8 @@ services:
     volumes:
       - logsVolume:/logs
   frontend:
-    image: kshitijashah/productmanagementsystemui:latest
+#    image: kshitijashah/productmanagementsystemui:latest
+    image: budcoded/productmanagementsystemui:latest
     networks:
       - appNetwork
     ports:

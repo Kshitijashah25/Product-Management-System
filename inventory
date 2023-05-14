@@ -1,2 +1,3 @@
 [productmanagementsystem]
 host1 ansible_host=192.168.29.175 ansible_connection=ssh ansible_user=ansible ansible_sudo_pass=123
+host2 ansible_host=172.16.128.197 ansible_connection=ssh ansible_user=ansible ansible_sudo_pass=1234
