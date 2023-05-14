@@ -1720,3 +1720,87 @@ Caused by: java.lang.RuntimeException: Driver com.mysql.cj.jdbc.Driver claims to
 2023-05-14 02:07:14.059 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-05-14 02:07:14.673 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2023-05-14 02:07:14.775 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-05-14 17:01:22.687 [main] INFO  c.i.p.ProductManagementSystemApplication - Starting ProductManagementSystemApplication using Java 17.0.6 with PID 16634 (/media/DATA/projects/ProductManagementSystem/target/classes started by kshitija in /media/DATA/projects/ProductManagementSystem)
+2023-05-14 17:01:22.714 [main] INFO  c.i.p.ProductManagementSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-14 17:01:57.036 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-14 17:02:01.767 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 4098 ms. Found 4 JPA repository interfaces.
+2023-05-14 17:02:22.149 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 1111 (http)
+2023-05-14 17:02:23.786 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-1111"]
+2023-05-14 17:02:23.811 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-14 17:02:23.849 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-05-14 17:02:33.367 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-14 17:02:33.418 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 70307 ms
+2023-05-14 17:02:56.508 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-14 17:03:01.918 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-14 17:03:21.746 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-05-14 17:03:48.579 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3b021664
+2023-05-14 17:03:48.823 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-05-14 17:03:50.097 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-14 17:03:50.315 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-05-14 17:05:44.584 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-14 17:05:45.065 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-14 17:05:48.216 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-14 17:05:50.026 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-1111"]
+2023-05-14 17:05:50.507 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 1111 (http) with context path ''
+2023-05-14 17:05:50.531 [main] INFO  c.i.p.ProductManagementSystemApplication - Started ProductManagementSystemApplication in 270.58 seconds (process running for 281.853)
+2023-05-14 17:05:50.551 [main] INFO  c.i.p.Utils.DataInitializer - At the start of the application creating an admin user.
+2023-05-14 17:05:50.841 [main] INFO  c.i.p.Utils.DataInitializer - Admin user already exists with name: Admin and email id: Admin@iiitb.ac.in
+2023-05-14 17:10:56.065 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-14 17:10:56.211 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-05-14 17:10:56.564 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-05-14 17:11:13.876 [main] INFO  c.i.p.ProductManagementSystemApplication - Starting ProductManagementSystemApplication using Java 17.0.6 with PID 17358 (/media/DATA/projects/ProductManagementSystem/target/classes started by kshitija in /media/DATA/projects/ProductManagementSystem)
+2023-05-14 17:11:13.881 [main] INFO  c.i.p.ProductManagementSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-14 17:11:16.828 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-14 17:11:16.962 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 124 ms. Found 4 JPA repository interfaces.
+2023-05-14 17:11:18.069 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 1111 (http)
+2023-05-14 17:11:18.096 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-1111"]
+2023-05-14 17:11:18.098 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-14 17:11:18.098 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-05-14 17:11:18.412 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-14 17:11:18.413 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4409 ms
+2023-05-14 17:11:18.851 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-14 17:11:19.068 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-14 17:11:20.023 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-05-14 17:11:21.983 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7e0986c9
+2023-05-14 17:11:21.988 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-05-14 17:11:22.064 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-14 17:11:22.068 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-05-14 17:11:25.304 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-14 17:11:25.316 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-14 17:11:26.014 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-14 17:11:26.565 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-1111"]
+2023-05-14 17:11:26.601 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 1111 (http) with context path ''
+2023-05-14 17:11:26.608 [main] INFO  c.i.p.ProductManagementSystemApplication - Started ProductManagementSystemApplication in 14.27 seconds (process running for 20.947)
+2023-05-14 17:11:26.610 [main] INFO  c.i.p.Utils.DataInitializer - At the start of the application creating an admin user.
+2023-05-14 17:11:26.723 [main] INFO  c.i.p.Utils.DataInitializer - Admin user already exists with name: Admin and email id: Admin@iiitb.ac.in
+2023-05-14 17:14:00.303 [http-nio-1111-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-14 17:14:00.303 [http-nio-1111-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-05-14 17:14:00.304 [http-nio-1111-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-05-14 17:14:00.518 [http-nio-1111-exec-2] INFO  c.i.p.Controller.UserController - User is trying to login.
+2023-05-14 17:14:00.518 [http-nio-1111-exec-2] INFO  c.i.p.Service.UserService - User is trying to login with email: customer@iiitb.ac.in
+2023-05-14 17:14:00.521 [http-nio-1111-exec-2] INFO  c.i.p.Service.UserService - Email exists.
+2023-05-14 17:14:01.045 [http-nio-1111-exec-2] INFO  c.i.p.Controller.UserController - User logged in successfully.
+2023-05-14 17:14:01.988 [http-nio-1111-exec-3] INFO  c.i.p.Controller.ProductController - Getting all products.
+2023-05-14 17:14:01.991 [http-nio-1111-exec-3] INFO  c.i.p.Service.ProductService - Getting all the products.
+2023-05-14 17:14:02.344 [http-nio-1111-exec-4] INFO  c.i.p.Controller.ProductController - Getting all products.
+2023-05-14 17:14:02.345 [http-nio-1111-exec-4] INFO  c.i.p.Service.ProductService - Getting all the products.
+2023-05-14 17:19:01.511 [http-nio-1111-exec-7] INFO  c.i.p.Controller.UserController - User is trying to login.
+2023-05-14 17:19:01.554 [http-nio-1111-exec-8] INFO  c.i.p.Controller.UserController - User is trying to login.
+2023-05-14 17:19:01.639 [http-nio-1111-exec-7] INFO  c.i.p.Service.UserService - User is trying to login with email: customer@iiitb.ac.in
+2023-05-14 17:19:01.639 [http-nio-1111-exec-8] INFO  c.i.p.Service.UserService - User is trying to login with email: customer@iiitb.ac.in
+2023-05-14 17:19:01.712 [http-nio-1111-exec-8] INFO  c.i.p.Service.UserService - Email exists.
+2023-05-14 17:19:01.712 [http-nio-1111-exec-7] INFO  c.i.p.Service.UserService - Email exists.
+2023-05-14 17:19:01.849 [http-nio-1111-exec-7] INFO  c.i.p.Controller.UserController - User logged in successfully.
+2023-05-14 17:19:01.866 [http-nio-1111-exec-8] INFO  c.i.p.Controller.UserController - User logged in successfully.
+2023-05-14 17:19:02.014 [http-nio-1111-exec-9] INFO  c.i.p.Controller.ProductController - Getting all products.
+2023-05-14 17:19:02.024 [http-nio-1111-exec-9] INFO  c.i.p.Service.ProductService - Getting all the products.
+2023-05-14 17:19:02.568 [http-nio-1111-exec-10] INFO  c.i.p.Controller.ProductController - Getting all products.
+2023-05-14 17:19:02.585 [http-nio-1111-exec-10] INFO  c.i.p.Service.ProductService - Getting all the products.
+2023-05-14 17:19:21.562 [http-nio-1111-exec-1] INFO  c.i.p.Controller.UserController - User is trying to login.
+2023-05-14 17:19:21.665 [http-nio-1111-exec-1] INFO  c.i.p.Service.UserService - User is trying to login with email: admin@iiitb.ac.in
+2023-05-14 17:19:21.676 [http-nio-1111-exec-1] INFO  c.i.p.Service.UserService - Email exists.
+2023-05-14 17:19:21.686 [http-nio-1111-exec-1] INFO  c.i.p.Controller.UserController - User logged in successfully.
+2023-05-14 17:19:21.802 [http-nio-1111-exec-2] INFO  c.i.p.Controller.ProductController - Getting all products.
+2023-05-14 17:19:21.871 [http-nio-1111-exec-2] INFO  c.i.p.Service.ProductService - Getting all the products.
+2023-05-14 17:19:21.996 [http-nio-1111-exec-3] INFO  c.i.p.Controller.ProductController - Getting all products.
+2023-05-14 17:19:22.027 [http-nio-1111-exec-3] INFO  c.i.p.Service.ProductService - Getting all the products.
