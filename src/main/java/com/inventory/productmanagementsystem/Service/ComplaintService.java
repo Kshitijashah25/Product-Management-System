@@ -53,14 +53,14 @@ public class ComplaintService {
             return ResponseEntity.status(400).body("Complaint with id: " + id + " doesn't exist.");
         } else {
             complaintRepository.deleteById(id);
-            logger.info("Compalaint deleted successfully.");
+            logger.info("Complaint deleted successfully.");
             return ResponseEntity.status(200).body("Complaint deleted successfully.");
         }
     }
 
     @Transactional
     public ResponseEntity<String> updateComplaint(Long complaintId, String content) {
-        logger.info("Finding comlaint with given complaint id: " + complaintId);
+        logger.info("Finding complaint with given complaint id: " + complaintId);
         Complaint complaint = complaintRepository.findById(complaintId).orElseThrow(() -> new IllegalStateException("Complaint with id: " + complaintId + " doesn't exist."));
         complaint.setContent(content);
         complaint.setCreatedAt(LocalDateTime.now());
